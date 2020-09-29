@@ -23,7 +23,7 @@
 
 ## 🏁 Sobre <a name = "about"></a>
 
-- Projeto desenvolvido com o propósito acadêmico de servir a aplicação (mobile/web) do projeto Sistema de Anamnese, referente ao Projeto Interdisciplinar 5 da faculdade Senac DF. Desenvolvida usando Typescript ma linguagem de programação e utilizando Repository & Service Pattern na estrutura de arquivos, a parte de banco de dados, foi se usado TypeORM como ORM para controle de queryes e PostgresSQL como banco de dados. A API tem a função de manter o serviço de cadastro e marcação de consultas psicologicas, com os psicólogos das clínicas.
+- Projeto desenvolvido com o propósito acadêmico de servir a aplicação (mobile/web) do projeto Sistema de Anamnese, referente ao Projeto Interdisciplinar 5 da faculdade Senac DF. Desenvolvida usando Typescript como linguagem de programação e utilizando Repository & Service Pattern na estrutura de arquivos, a parte de banco de dados, foi se usado TypeORM como ORM para controle de queryes e PostgresSQL como banco de dados. A API tem a função de manter o serviço de cadastro e marcação de consultas psicologicas, com os psicólogos das clínicas.
 
 ## 🏁 Inicializando a aplicação <a name = "getting_started"></a>
 
