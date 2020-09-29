@@ -23,52 +23,80 @@
 
 ## 🏁 Sobre <a name = "about"></a>
 
-- Projeto desenvolvido com o propósito de entender principalmente o modelo de arquitetura de um projeto Node.js abordando fundamentos de repositories e services, para uma abstração maior das regras de negocio do sistema e um código mais escalavel, aumentando a vida útil do projeto.
+- Projeto desenvolvido com o propósito acadêmico de servir a aplicação (mobile/web) do projeto Sistema de Anamnese, referente ao Projeto Interdisciplinar 5 da faculdade Senac DF. Desenvolvida usando Typescript ma linguagem de programação e utilizando Repository & Service Pattern na estrutura de arquivos, a parte de banco de dados, foi se usado TypeORM como ORM para controle de queryes e PostgresSQL como banco de dados. A API tem a função de manter o serviço de cadastro e marcação de consultas psicologicas, com os psicólogos das clínicas.
+
 ## 🏁 Inicializando a aplicação <a name = "getting_started"></a>
 
 - A back end da aplicação foi desenvolvido em [Node](https://nodejs.org/en/) - JavaScript runtime environment.
 
 
 ### Pré-requisitos
-- Editor de códigos [Visual Studio Code](https://code.visualstudio.com/download). E interpretador JavaScript [NodeJS](https://nodejs.org/pt-br/download/)
+- Editor de códigos como o [Visual Studio Code](https://code.visualstudio.com/download), interpretador JavaScript [NodeJS](https://nodejs.org/pt-br/download/) de preferência na versão LTS 12.8, uma GUI cliente de banco de dados Postgres como [Postbird](https://www.electronjs.org/apps/postbird), e uma GUI cliente REST para se testar as rotas da API como o [Insomnia](https://insomnia.rest/download/) ou [Postman](https://www.postman.com/downloads/), e um gerênciador de pacotes [Yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable) ou o próprio NPM que já vem embutido no NodeJS.
 
 ### Instalação
 
-Para inicializar o arquivo `package.json` e instalar todas as dependências digite os comandos abaixo
+Para inicializar a aplicação primeiro abra o arquivo no terminal ou prompt de comando e digite o comando abaixo para instalar todas as dependências da API. OBS: caso tenha instalado o gerênciador de pacotes [Yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable), escolha a primeira opção caso esteja usando NPM escolha a segunda opção.
 
 ```
 yarn
 ```
 
+ou
+
+```
+npm install
+```
+
+
 ### Inicializando o projeto
 
-Basta rodar o server da aplicação digite o comando abaixo no terminal do arquivo
+Primeiro configure as configuações de ENV copiando o arquivo .env.example para apenas .env, caso for utilizar algum banco de dados diferente de Postgres, será preciso instalar o driver do mesmo.
+O typeORM da suporte para os bancos de dados: MySql ou MariaDB, SQLite, Microsoft SQL Server e Oracle caso queira instalar algum desses drivers digite algum dos comandos abaixo:
+
+```
+npm install mysql
+```
+
+```
+npm install sqlite3
+```
+
+```
+npm install mssql
+```
+
+```
+npm install oracledb
+```
+
+Fazendo isso crie a database com o mesmo nome que você colocou no arquvivo .env, para que o banco de dados possa ser iniciado sem problemas.
+
+Com todas as dependências instaladas e o arquivo .env configurado para inicializar o servidor da aplicação digite o comando abaixo no terminal do arquivo:
 
 ```
 yarn dev:server
 ```
+ou
+```
+npm run dev:server
+```
 
 ## 🎈 Uso <a name="usage"></a>
 
-Atualmente a aplicação conta apenas com as funções de marcar um horario especifico
+Atualmente a aplicação conta apenas com as funções de marcar um horario especifico e cadastrar clientes.
 
-- Para rodar os testes automatizados use o comando:
-
-```
-yarn test
-```
 
 ## ⛏️ Ferramentas <a name = "built_using"></a>
 
 - [Node](https://nodejs.org/en/) - JavaScript runtime environment.
 - [Express](https://expressjs.com/pt-br/) - Framework web.
-- [Jest](https://jestjs.io/) - JavaScript testing framework.
 
 ## ✍️ Autores <a name = "authors"></a>
 
 - [@RafaelLeveske](https://github.com/RafaelLeveske)
+- Valdisson Nunes
+- Leandro Raineri
 
 ## 🎉 Considerações finais <a name = "acknowledgement"></a>
 
-- Esse projeto foi desenvolvido com intuito acadêmico para estudo sobre fundamentos de repository e service patterns, da plataforma GoStack 12.0 da Rocketseat.
-
+- Esse projeto foi desenvolvido com intuito acadêmico para desenvolvimento da aplicação Sistema Anamnese para o Projeto Interdisciplinar 5 da Faculdade de Técnologia Senac DF.
