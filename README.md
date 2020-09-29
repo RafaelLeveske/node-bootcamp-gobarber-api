@@ -1,7 +1,6 @@
-<img alt="GoStack" src="https://storage.googleapis.com/golden-wind/bootcamp-gostack/header-desafios.png" />
 
 <h3 align="center">
-  Bootcamp GoStack nível 2: Primeiro projeto com Node.js 
+  Sistema Anamnese PI Senac-DF API
 </h3>
 
 <p align="center">
