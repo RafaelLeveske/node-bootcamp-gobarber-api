@@ -54,17 +54,33 @@ Primeiro configure as configuações de ENV copiando o arquivo .env.example para
 O typeORM da suporte para os bancos de dados: MySql ou MariaDB, SQLite, Microsoft SQL Server e Oracle caso queira instalar algum desses drivers digite algum dos comandos abaixo:
 
 ```
+yarn add mysql
+```
+ou
+```
 npm install mysql
 ```
 
+```
+yarn add sqlite3
+```
+ou
 ```
 npm install sqlite3
 ```
 
 ```
+yarn add mssql
+```
+ou
+```
 npm install mssql
 ```
 
+```
+yarn add oracledb
+```
+ou
 ```
 npm install oracledb
 ```
