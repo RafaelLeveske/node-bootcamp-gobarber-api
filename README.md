@@ -16,7 +16,7 @@
 - [Inicializando a aplicação](#getting_started)
 - [Uso](#usage)
 - [Ferramentas](#built_using)
-- [Autor](#authors)
+- [Autores](#authors)
 - [Considerações finais](#acknowledgement)
 
 ---
