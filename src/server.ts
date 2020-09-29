@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 import 'reflect-metadata';
 
 import express, { Request, Response, NextFunction } from 'express';
@@ -31,6 +33,6 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
   });
 });
 
-app.listen(3333, () => {
+app.listen(process.env.APP_PORT || 3333, () => {
   console.log('Server Online')
 });
