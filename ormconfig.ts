@@ -9,12 +9,12 @@ export = {
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
   entities: [
-    path.resolve(__dirname, 'src', 'models', '*.ts')
+    path.resolve(__dirname, 'src', 'modules', '**', 'infra', 'typeorm', 'entities', '*.ts')
   ],
   migrations: [
-    path.resolve(__dirname, 'src', 'database', 'migrations', '*.ts')
+    path.resolve(__dirname, 'src', 'shared', 'infra', 'typeorm', 'migrations', '*.ts')
   ],
   cli: {
-    migrationsDir: path.resolve(__dirname, 'src', 'models', '*.ts')
+    migrationsDir: path.resolve(__dirname, 'src', 'shared', 'infra', 'typeorm', 'migrations')
   }
 }
