@@ -19,6 +19,7 @@
       "prettier"
   ],
   "rules": {
+    "class-methods-use-this": "off",
     "import/first": "off",
     "@typescript-eslint/no-var-requires": "off",
     "camelcase": "off",
