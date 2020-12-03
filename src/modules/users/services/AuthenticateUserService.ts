@@ -10,7 +10,7 @@ import IHashProvider from '../providers/HashProvider/models/IHashProvider';
 
 interface IRequest {
   email: string;
-  password: string;
+  password?: string;
 }
 
 interface IResponse {
