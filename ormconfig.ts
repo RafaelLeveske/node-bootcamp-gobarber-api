@@ -1,5 +1,6 @@
 require('dotenv').config();
-import path from 'path'
+
+import path from 'path';
 
 export = {
   type: process.env.DB_CONNECTION,
@@ -9,12 +10,36 @@ export = {
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
   entities: [
-    path.resolve(__dirname, 'src', 'modules', '**', 'infra', 'typeorm', 'entities', '*.ts')
+    path.resolve(
+      __dirname,
+      'src',
+      'modules',
+      '**',
+      'infra',
+      'typeorm',
+      'entities',
+      '*.ts',
+    ),
   ],
   migrations: [
-    path.resolve(__dirname, 'src', 'shared', 'infra', 'typeorm', 'migrations', '*.ts')
+    path.resolve(
+      __dirname,
+      'src',
+      'shared',
+      'infra',
+      'typeorm',
+      'migrations',
+      '*.ts',
+    ),
   ],
   cli: {
-    migrationsDir: path.resolve(__dirname, 'src', 'shared', 'infra', 'typeorm', 'migrations')
-  }
-}
+    migrationsDir: path.resolve(
+      __dirname,
+      'src',
+      'shared',
+      'infra',
+      'typeorm',
+      'migrations',
+    ),
+  },
+};
