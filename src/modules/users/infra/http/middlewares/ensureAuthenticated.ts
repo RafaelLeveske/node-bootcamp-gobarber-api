@@ -5,7 +5,7 @@ import authConfig from '@config/auth';
 
 import AppError from '@shared/errors/AppError';
 
-interface TokenPayLoad {
+interface ITokenPayLoad {
   iat: number;
   exp: number;
   sub: string;
@@ -14,26 +14,26 @@ interface TokenPayLoad {
 export default function ensureAuthenticated(
   request: Request,
   response: Response,
-  next: NextFunction
-  ): void {
+  next: NextFunction,
+): void {
   const authHeader = request.headers.authorization;
 
   if (!authHeader) {
     throw new AppError('JWT token is missing', 401);
   }
 
-  const [, token] = authHeader.split(' '); //Neste caso a função split vai transformar o valor do request da constante authHeader em um array, separando assim o Bearer do token no Header da requisição, como o Bearer não será necessário, ele não é declarado na desestruturação das variaveis, apenas o token foi declarado.
+  const [, token] = authHeader.split(' '); // Neste caso a função split vai transformar o valor do request da constante authHeader em um array, separando assim o Bearer do token no Header da requisição, como o Bearer não será necessário, ele não é declarado na desestruturação das variaveis, apenas o token foi declarado.
 
   try {
     const decoded = verify(token, authConfig.jwt.secret);
 
-    const { sub } = decoded as TokenPayLoad;
+    const { sub } = decoded as ITokenPayLoad;
 
     request.user = {
       id: sub,
-    }
+    };
 
-    return next()
+    return next();
   } catch {
     throw new AppError('Invalid JWT token', 401);
   }
