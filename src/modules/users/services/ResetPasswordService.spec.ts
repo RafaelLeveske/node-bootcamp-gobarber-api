@@ -6,7 +6,7 @@ import FakeHashProvider from '../providers/HashProvider/fakes/FakeHashProvider';
 
 let fakeUsersRepository: FakeUsersRepository;
 let fakeUserTokensRepository: FakeUserTokensRepository;
-let resetPasswordService: ResetPasswordService;
+let resetPassword: ResetPasswordService;
 let fakeHashProvider: FakeHashProvider;
 
 describe('ResetPasswordService', () => {
@@ -15,7 +15,7 @@ describe('ResetPasswordService', () => {
     fakeUserTokensRepository = new FakeUserTokensRepository();
     fakeHashProvider = new FakeHashProvider();
 
-    resetPasswordService = new ResetPasswordService(
+    resetPassword = new ResetPasswordService(
       fakeUsersRepository,
       fakeUserTokensRepository,
       fakeHashProvider,
@@ -33,7 +33,7 @@ describe('ResetPasswordService', () => {
 
     const generateHash = jest.spyOn(fakeHashProvider, 'generateHash');
 
-    await resetPasswordService.execute({
+    await resetPassword.execute({
       password: '123123',
       token,
     });
@@ -44,9 +44,22 @@ describe('ResetPasswordService', () => {
     expect(updatedUser?.password).toBe('123123');
   });
 
+  it('should not be able to reset the password with non-existing user', async () => {
+    const { token } = await fakeUserTokensRepository.generate(
+      'non-existing-user',
+    );
+
+    await expect(
+      resetPassword.execute({
+        token,
+        password: '123456',
+      }),
+    ).rejects.toBeInstanceOf(AppError);
+  });
+
   it('não deve ser permitido resetar a senha de um token não existente', async () => {
     await expect(
-      resetPasswordService.execute({
+      resetPassword.execute({
         token: 'non-existing-token',
         password: '123456',
       }),
@@ -69,7 +82,7 @@ describe('ResetPasswordService', () => {
     });
 
     await expect(
-      resetPasswordService.execute({
+      resetPassword.execute({
         password: '123123',
         token,
       }),
