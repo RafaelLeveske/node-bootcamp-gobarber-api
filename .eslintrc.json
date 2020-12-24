@@ -20,6 +20,7 @@
       "prettier"
   ],
   "rules": {
+    "@typescript-eslint/ban-types":"off",
     "no-console":"off",
     "no-useless-constructor": "off",
     "class-methods-use-this": "off",
