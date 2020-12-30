@@ -40,8 +40,6 @@ class CreateUserSercice {
 
     await this.cacheProvider.invalidatePrefix('providers-list');
 
-    // console.log('invalidatePrefix');
-
     return user;
   }
 }
